@@ -18,7 +18,8 @@ The outputs `overlay.js` and `overlay.css` will be created in `/dist`.
 
 ### Grunt tasks/options ###
 
-The default grunt task will produce a minified `overlay.js`.  Run `grunt debug` to get non-minified output.  Run `grunt test` to only run qunit tests.
+The default grunt task will produce a minified `overlay.js`.  Run `grunt debug` to get non-minified output.  Run
+`grunt test` to only run qunit tests (two example tests are included).
 
 ### jQuery is included ###
 
@@ -62,7 +63,8 @@ An overlay can be closed by calling `overlay.close()`.  Only one overlay can be 
 
 ## Browser Compatibility ##
 
-Overlay should work fine with IE6/7/8 due to the use of jQuery 1.x.  However you get a plain black underlay.
+Overlay should work fine with IE6/7/8 due to the use of jQuery 1.x.  However you get a plain black underlay (need to add
+IE-specific opacity css).
 
 ### Sources ###
 
@@ -94,7 +96,6 @@ A more idiomatic approach would be to support declarative creation of an Overlay
 
 ### Time spent ###
 
-This took ~6 hours over two days.  Core functionality took 2.5-3 hours, the grunt build took an hour+, and
-I spent another hour or so manual testing and polishing.  Writing this documentation took another hour.  I also spent
-time catching up on the current state of CommonJS vs. AMD, etc. before deciding on using globals (simpler for this),
-which I didn't count toward the time.
+I spent ~6 hours over two days.  Probably half that was spent on core functionality.  I also spent
+time catching up on the current state of CommonJS vs. AMD, etc., but I didn't count this toward the total (I used
+globals to keep it simple).
