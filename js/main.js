@@ -2,9 +2,8 @@
 // author: Layne Tcheng
 (function(globals){
 
+    // track if overlay is already being shown
     globals.OVERLAY = {overlayIsShowing: false};
-
-    // TODO test for jQuery
 
     /**
      *
@@ -114,6 +113,9 @@
         globals.OVERLAY.overlayIsShowing = false;
     }
 
+    /**
+     * Centers the modal
+     */
     Overlay.prototype.center = function(){
         // adapted from http://stackoverflow.com/questions/210717/using-jquery-to-center-a-div-on-the-screen
         var container = this.container;
