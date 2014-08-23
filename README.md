@@ -97,6 +97,6 @@ A more idiomatic approach would be to support declarative creation of an Overlay
 
 ### Time spent ###
 
-I spent ~6 hours over two days + another hour+ for this documentation.  Probably half that was spent on core
+I spent ~6 hours over two days + another hour+ for this documentation.  Probably half that was spent on dev of core
 functionality.  I also spent time catching up on the current state of CommonJS vs. AMD, etc. (though I used globals to
 keep it simple).
