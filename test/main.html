@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUnit basic example</title>
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.14.0.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="http://code.jquery.com/qunit/qunit-1.14.0.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../js/main.js"></script>
+<script>
+    var overlay;
+
+    QUnit.module("Overlay", {
+        teardown: function(assert){
+            if (overlay){
+                overlay.close();
+            }
+        }
+    });
+
+    QUnit.test("Make an overlay with an element", function( assert ) {
+        overlay = new Overlay($("<div>You've got Overlay!</div>"));
+
+        assert.ok($('.overlay-modal:contains("You\'ve got Overlay!")').length, "Overlay was created.");
+    });
+
+    QUnit.test("Make an overlay with an image URL", function( assert ) {
+        overlay = new Overlay("http://www.nicenicejpg.com/300");
+
+        assert.equal($('.overlay-modal img').attr('src'), "http://www.nicenicejpg.com/300");
+    });
+</script>
+</body>
+</html>
