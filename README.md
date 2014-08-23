@@ -31,7 +31,8 @@ Overlay requires and comes bundled with jQuery v1.11.1.
 new Overlay(content, options)
 ```
 
-`content` is a required parameter, while `options` is optional.  `content` is either a DOM element or image URL:
+`content` is a required parameter, while `options` is optional; the Overlay object is returned.  `content` is either
+a DOM element or image URL:
 
 ```
 new Overlay($("<p>You've got modal!</p>"));
@@ -53,13 +54,13 @@ Overlay accepts the following hash of options (all optional):
 
 * `width`
 * `height`
-* `closeOnOutsideClick` - close the overlay when a place outside the content is clicked
-* `closeOnInsideClick` - close the overlay when the content within is clicked
-* `loadingMessage` - if the content is an image URL, the message to show while the image is loading
+* `closeOnOutsideClick` - close the overlay when outside the content is clicked (default is `true`)
+* `closeOnInsideClick` - close the overlay when the content within is clicked (default is `false`)
+* `loadingMessage` - if the content is an image URL, a message to show while the image is loading
 
 ### Closing the overlay ###
 
-An overlay can be closed by calling `overlay.close()`.  Only one overlay can be open at a time.
+An overlay can be closed by calling `close()` on it.  Only one overlay can be open at a time.
 
 ## Browser Compatibility ##
 
@@ -68,24 +69,24 @@ IE-specific opacity css).
 
 ### Sources ###
 
-http://api.jquery.com/
-https://developer.mozilla.org/en-US/docs/Web
-various SO articles on checking if a JS Object is a DOM element
-http://stackoverflow.com/questions/210717/using-jquery-to-center-a-div-on-the-screen
-http://gruntjs.com/ docs
+* http://api.jquery.com/
+* https://developer.mozilla.org/en-US/docs/Web
+* various SO articles on checking if a JS Object is a DOM element
+* http://stackoverflow.com/questions/210717/using-jquery-to-center-a-div-on-the-screen
+* http://gruntjs.com/ docs
 
 There were undoubtedly a few other SO articles that I neglected to note while in the rhythm of development.
 
 ### Third Party Libraries/Tools Used Within ###
 
-jQuery v1.11.1
-Grunt + Grunt build plugins (qunit, concat, uglify)
-NPM/Node
-QUnit
+* jQuery v1.11.1
+* Grunt + Grunt build plugins (qunit, concat, uglify)
+* NPM/Node
+* QUnit
 
 ## Integration ###
 
-## Ember.js
+### Ember.js ###
 
 Overlay only supports programmatic creation, so you must create an `Ember.View` or `Ember.Component`, and call
 `new Overlay()` within `didInsertElement`.  To cleanup the overlay, call `close()` on the Overlay object inside
@@ -96,6 +97,6 @@ A more idiomatic approach would be to support declarative creation of an Overlay
 
 ### Time spent ###
 
-I spent ~6 hours over two days.  Probably half that was spent on core functionality.  I also spent
-time catching up on the current state of CommonJS vs. AMD, etc., but I didn't count this toward the total (I used
-globals to keep it simple).
+I spent ~6 hours over two days + another hour+ for this documentation.  Probably half that was spent on core
+functionality.  I also spent time catching up on the current state of CommonJS vs. AMD, etc. (though I used globals to
+keep it simple).
